@@ -1,5 +1,5 @@
 // TODO: modify the body object!
-let body = `
+/*let body = `
 <!doctype html>
 <html lang=en>
   <head>
@@ -14,11 +14,12 @@ let body = `
   </body>
 </html>
 `
+*/
 
 export async function handler (req: object) {
   try {
     //JSON.stringify(req)//
-    const r = await (await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).text()
+    const body = await (await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).text()
 	  //const body = await r.json()
     return {
     headers: {
