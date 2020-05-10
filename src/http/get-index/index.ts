@@ -18,7 +18,8 @@ let body = `
 export async function handler (req: object) {
   try {
     console.log('req', req)
-    const body = JSON.stringify(req)//await(await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).json()
+    //JSON.stringify(req)//
+    const body = await(await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).json()
     return {
     headers: {
       //'content-type': 'text/html; charset=utf8',
