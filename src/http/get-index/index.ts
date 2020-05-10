@@ -17,7 +17,7 @@ let body = `
 
 export async function handler (req: object) {
   try {
-    const body = {foo: 'bar'}//await(await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).json()
+    const body = JSON.stringify({foo: 'bar'})//await(await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).json()
     return {
     headers: {
       //'content-type': 'text/html; charset=utf8',
@@ -33,7 +33,7 @@ export async function handler (req: object) {
       'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     },
-    body: { e }
+    body: JSON.stringify({ e })
   }
   }
 }
