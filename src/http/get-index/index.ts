@@ -17,7 +17,7 @@ let body = `
 
 export async function handler (req: object) {
   try {
-    const body = await(await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).json()
+    const body = {foo: 'bar'}//await(await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).json()
     return {
     headers: {
       //'content-type': 'text/html; charset=utf8',
