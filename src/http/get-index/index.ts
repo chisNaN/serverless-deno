@@ -10,15 +10,7 @@ let body = `
   </head>
   <body>
 
-    <h1 class="center-text">
-      <!-- ↓ Change "Hello world!" to something else and head on back to Begin! -->
-      Hello world!
-    </h1>
-
-    <p class="center-text">
-      Your <a href="https://begin.com" class="link" target="_blank">Begin</a> app is ready to go!
-    </p>
-
+   <marquee>hello world</marquee>
   </body>
 </html>
 `
