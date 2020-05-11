@@ -15,31 +15,26 @@
 </html>
 `
 */
-const cors = true
+const headers = {
+      //'content-type': 'text/html; charset=utf8',
+	    cors: true,
+	          'Access-Control-Allow-Origin': '*',
+      'content-type': 'application/json; charset=utf8',
+      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
+    }
 export async function handler (req: object) {
   try {
     //JSON.stringify(req)//
     const body = await (await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).text()
 	  //const body = await r.json()
     return {
-    headers: {
-      //'content-type': 'text/html; charset=utf8',
-	    cors,
-	          'Access-Control-Allow-Origin': '*',
-      'content-type': 'application/json; charset=utf8',
-      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
-    },
+    headers,
     body
   }
   } catch (e) {
 	console.log(e)
     return {
-    headers: {
-      cors,
-      'Access-Control-Allow-Origin': '*',
-      'content-type': 'application/json; charset=utf8',
-      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
-    },
+    headers,
     body: JSON.stringify(e)
   }
   }
