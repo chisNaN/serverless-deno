@@ -15,7 +15,7 @@
 </html>
 `
 */
-
+const cors = true
 export async function handler (req: object) {
   try {
     //JSON.stringify(req)//
@@ -24,7 +24,7 @@ export async function handler (req: object) {
     return {
     headers: {
       //'content-type': 'text/html; charset=utf8',
-	    'cors': true,
+	    cors,
 	          'Access-Control-Allow-Origin': '*',
       'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
@@ -32,10 +32,10 @@ export async function handler (req: object) {
     body
   }
   } catch (e) {
-	  console.log(e)
+	console.log(e)
     return {
     headers: {
-      //'content-type': 'text/html; charset=utf8',
+      cors,
       'Access-Control-Allow-Origin': '*',
       'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
