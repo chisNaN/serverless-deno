@@ -8,9 +8,9 @@ const headers = {
 export async function handler (req: object) {
   try {
     //JSON.stringify(req)//
-    console.log(req)
-    const url = 'https://magnetico.kescher.at/api/v0.1/torrents?query=notwist'
-    const body = await (await fetch(url)).text()
+    //console.log(req.queryStringParameters.query)
+    const url = 'https://magnetico.kescher.at/api/v0.1/torrents?query='
+    const body = await (await fetch(url + req.queryStringParameters.query)).text()
     return {
     headers,
     body
