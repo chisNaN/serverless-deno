@@ -10,10 +10,10 @@ export async function handler (req: object) {
     //JSON.stringify(req)//
     //console.log(req.queryStringParameters.query)
     const url = 'https://magnetico.kescher.at/api/v0.1/torrents?query='
-    const body = await (await fetch(url + req.queryStringParameters.query)).text()
+    //const body = await (await fetch(url + req.queryStringParameters.query)).text()
     return {
     headers,
-    body
+    body: JSON.stringify(req)
   }
   } catch (e) {
 	console.log(e)
