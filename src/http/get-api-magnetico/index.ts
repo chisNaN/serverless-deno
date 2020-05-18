@@ -1,3 +1,7 @@
+interface Req {
+  queryStringParameters?: object
+}
+
 const headers = {
       //'content-type': 'text/html; charset=utf8',
 	    cors: true,
@@ -7,8 +11,8 @@ const headers = {
     }
 export async function handler (req: object) {
   try {
-	  console.log('is null', req == null)
-	  console.log('typeof', typeof req)
+	    let thevalue = req.queryStringParameters || 'nothing there'
+
     //JSON.stringify(req)//
     /*let body = null
     if (req.queryStringParameters) {
@@ -21,7 +25,7 @@ export async function handler (req: object) {
     //const body = await (await fetch(url + req.queryStringParameters.query)).text()
     return {
     headers,
-    body: JSON.stringify(req)
+    body: JSON.stringify(thevalue)
     }
   } catch (e) {
 	console.log(e)
