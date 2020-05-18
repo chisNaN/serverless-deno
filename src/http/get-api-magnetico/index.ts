@@ -13,7 +13,7 @@ export async function handler (req) {
     //const body = await (await fetch(url + req.queryStringParameters.query)).text()
     return {
     headers,
-    body: req.queryStringParameters.query
+    body: JSON.stringify(req.queryStringParameters)
     }
   } catch (e) {
 	console.log(e)
