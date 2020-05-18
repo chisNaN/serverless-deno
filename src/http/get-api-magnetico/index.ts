@@ -8,12 +8,18 @@ const headers = {
 export async function handler (req) {
   try {
     //JSON.stringify(req)//
+    let body = null
+    if (req.queryStringParameters) {
+      body = JSON.stringify(req.queryStringParameters)
+    }else {
+    body = 'body'
+    }
     //console.log(req.queryStringParameters.query)
     const url = 'https://magnetico.kescher.at/api/v0.1/torrents?query='
     //const body = await (await fetch(url + req.queryStringParameters.query)).text()
     return {
     headers,
-    body: JSON.stringify(req.queryStringParameters || 'nothing')
+    body //JSON.stringify(req?.queryStringParameters)
     }
   } catch (e) {
 	console.log(e)
