@@ -1,9 +1,9 @@
-interface Query {
+/*interface Query {
 	query?: string;
 }
-
+*/
 interface Req {
-  queryStringParameters?: Query;
+  queryStringParameters?: { query?: string; };
 }
 
 const headers = {
@@ -16,7 +16,7 @@ const headers = {
 export async function handler (req: Req) {
   try {
 	    let thevalue = req.queryStringParameters || 'nothing there'
-	    let v2 = req.queryStringParameters.query || 'pouet'
+	    let v2 = thevalue.query || 'pouet'
 	    console.log('v2', v2)
     //JSON.stringify(req)//
     /*let body = null
