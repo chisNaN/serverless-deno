@@ -5,21 +5,21 @@ const headers = {
       'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     }
-export async function handler (req: object) {
+export async function handler (req) {
   try {
     //JSON.stringify(req)//
-    let body = null
+    /*let body = null
     if (req.queryStringParameters) {
       body = JSON.stringify(req.queryStringParameters)
     }else {
     body = 'body'
-    }
+    }*/
     //console.log(req.queryStringParameters.query)
     const url = 'https://magnetico.kescher.at/api/v0.1/torrents?query='
     //const body = await (await fetch(url + req.queryStringParameters.query)).text()
     return {
     headers,
-    body //JSON.stringify(req?.queryStringParameters)
+    body: JSON.stringify(req)
     }
   } catch (e) {
 	console.log(e)
