@@ -14,7 +14,7 @@ export async function handler (req: object) {
     }else {
     body = 'body'
     }*/
-    //console.log(req.queryStringParameters.query)
+    console.log(' POUET POET -----------> ', req.queryStringParameters)
     const url = 'https://magnetico.kescher.at/api/v0.1/torrents?query='
     //const body = await (await fetch(url + req.queryStringParameters.query)).text()
     return {
