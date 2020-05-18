@@ -2,8 +2,12 @@
 	query?: string;
 }
 */
-interface Req {
+/*interface Req {
   queryStringParameters?: { query?: string; };
+}
+*/
+interface Req {
+  [path: string]: Req | string
 }
 
 const headers = {
