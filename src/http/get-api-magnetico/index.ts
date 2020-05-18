@@ -5,7 +5,7 @@ const headers = {
       'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     }
-export async function handler (req: object) {
+export async function handler (req) {
   try {
     //JSON.stringify(req)//
     //console.log(req.queryStringParameters.query)
@@ -13,8 +13,8 @@ export async function handler (req: object) {
     //const body = await (await fetch(url + req.queryStringParameters.query)).text()
     return {
     headers,
-    body: JSON.stringify(req)
-  }
+    body: req.queryStringParameters.query
+    }
   } catch (e) {
 	console.log(e)
     return {
