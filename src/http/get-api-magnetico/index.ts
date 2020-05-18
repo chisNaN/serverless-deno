@@ -12,7 +12,7 @@ const headers = {
 export async function handler (req: Req) {
   try {
 	    let thevalue = req.queryStringParameters || 'nothing there'
-
+	    console.log('thevalue.query',thevalue.query)
     //JSON.stringify(req)//
     /*let body = null
     if (req.queryStringParameters) {
