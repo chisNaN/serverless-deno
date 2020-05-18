@@ -1,9 +1,9 @@
-/*interface Query {
-	query?: object;
+interface Query {
+	query?: string;
 }
-*/
+
 interface Req {
-  queryStringParameters?: { query?: string; };
+  queryStringParameters?: Query;
 }
 
 const headers = {
