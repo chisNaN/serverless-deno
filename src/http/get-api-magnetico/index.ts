@@ -9,7 +9,7 @@ const headers = {
       'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     }
-export async function handler (req: object) {
+export async function handler (req: Req) {
   try {
 	    let thevalue = req.queryStringParameters || 'nothing there'
 
