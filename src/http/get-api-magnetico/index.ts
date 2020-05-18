@@ -1,5 +1,5 @@
 interface Query {
-	query?: string;
+	query?: object;
 }
 
 interface Req {
@@ -16,7 +16,8 @@ const headers = {
 export async function handler (req: Req) {
   try {
 	    let thevalue = req.queryStringParameters || 'nothing there'
-	    console.log('thevalue.query',thevalue.query)
+	    let v2 = req.queryStringParameters.query || 'pouet'
+	    console.log('v2', v2)
     //JSON.stringify(req)//
     /*let body = null
     if (req.queryStringParameters) {
