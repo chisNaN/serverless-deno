@@ -7,6 +7,8 @@ const headers = {
     }
 export async function handler (req: object) {
   try {
+	  console.log('is null', req == null)
+	  console.log('typeof', typeof req)
     //JSON.stringify(req)//
     /*let body = null
     if (req.queryStringParameters) {
