@@ -3,7 +3,7 @@ begin-app
 
 @http
 get /api/hello
-get /api/magnetico
+get /api/magnetico/:param
 
 @tables
 data
