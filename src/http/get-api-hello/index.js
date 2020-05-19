@@ -22,14 +22,14 @@ const headers = {
       'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     }
-export async function handler (req: object) {
+export async function handler (req) {
   try {
     //JSON.stringify(req)//
     //const body = await (await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).text()
 	  //const body = await r.json()
     return {
     headers,
-    body
+    body: JSON.stringify(req)
   }
   } catch (e) {
 	console.log(e)
