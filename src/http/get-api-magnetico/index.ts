@@ -22,7 +22,7 @@ const headers = {
 export async function handler (req: APIGatewayProxyEvent, context: Context) {
 
   try {
-	    let thevalue = req.queryStringParameters.query || 'nothing there'
+	    let thevalue = req.queryStringParameters!.query || 'nothing there'
     //JSON.stringify(req)//
     /*let body = null
     if (req.queryStringParameters) {
