@@ -1,15 +1,5 @@
 import { APIGatewayProxyEvent, Context } from "https://deno.land/x/lambda/mod.ts";
-/*interface Query {
-	query?: any;
-}*/
-/*interface Req {
-  queryStringParameters?: { query?: string; };
-}
 
-interface Req {
-  queryStringParameters?: object;
-}
-*/
 const headers = {
       //'content-type': 'text/html; charset=utf8',
 	    cors: true,
@@ -20,22 +10,13 @@ const headers = {
 
 // export async function handler (req: Req) {
 export async function handler (req: APIGatewayProxyEvent, context: Context) {
-
   try {
-	    let thevalue = req.queryStringParameters!.query || 'nothing there'
-    //JSON.stringify(req)//
-    /*let body = null
-    if (req.queryStringParameters) {
-      body = JSON.stringify(req.queryStringParameters)
-    }else {
-    body = 'body'
-    }*/
-    //console.log(' POUET POET -----------> ', req.queryStringParameters)
-    const url = 'https://magnetico.kescher.at/api/v0.1/torrents?'
-    //const body = await (await fetch(url + req.queryStringParameters.query)).text()
+    const q = req.queryStringParameters!.query || 'inception'
+    const url = `https://magnetico.kescher.at/api/v0.1/torrents?query=${q}`
+    const body = await (await fetch(url)).text()
     return {
     headers,
-    body: JSON.stringify(thevalue)
+    body
     }
   } catch (e) {
 	console.log(e)
