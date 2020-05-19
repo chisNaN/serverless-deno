@@ -22,8 +22,7 @@ const headers = {
 export async function handler (req: APIGatewayProxyEvent, context: Context) {
 
   try {
-	    let thevalue = req.queryStringParameters || 'nothing there'
-	    const v2 = thevalue.query || 'pouet'
+	    let thevalue = req.queryStringParameters.query || 'nothing there'
     //JSON.stringify(req)//
     /*let body = null
     if (req.queryStringParameters) {
@@ -36,7 +35,7 @@ export async function handler (req: APIGatewayProxyEvent, context: Context) {
     //const body = await (await fetch(url + req.queryStringParameters.query)).text()
     return {
     headers,
-    body: JSON.stringify(v2)
+    body: JSON.stringify(thevalue)
     }
   } catch (e) {
 	console.log(e)
