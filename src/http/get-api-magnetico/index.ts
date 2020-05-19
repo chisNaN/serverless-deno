@@ -1,5 +1,5 @@
 interface Query {
-	[key: any]: any;
+	query?: any;
 }
 /*interface Req {
   queryStringParameters?: { query?: string; };
