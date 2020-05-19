@@ -1,13 +1,12 @@
-/*interface Query {
-	query?: string;
+interface Query {
+	[key: string]: string;
 }
-*/
 /*interface Req {
   queryStringParameters?: { query?: string; };
 }
 */
 interface Req {
-  queryStringParameters?: object;
+  queryStringParameters?: Query;
 }
 
 const headers = {
