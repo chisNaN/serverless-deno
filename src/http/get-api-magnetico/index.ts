@@ -17,7 +17,10 @@ const headers = {
       'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     }
-export async function handler (req: Req) {
+
+// export async function handler (req: Req) {
+export async function handler (req: APIGatewayProxyEvent, context: Context) {
+
   try {
 	    let thevalue = req.queryStringParameters || 'nothing there'
     //JSON.stringify(req)//
