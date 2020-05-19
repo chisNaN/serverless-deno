@@ -7,7 +7,7 @@
 }
 */
 interface Req {
-  [path: string]: Req | string
+  queryStringParameters?: object;
 }
 
 const headers = {
@@ -20,8 +20,8 @@ const headers = {
 export async function handler (req: Req) {
   try {
 	    let thevalue = req.queryStringParameters || 'nothing there'
-	    let v2 = thevalue.query || 'pouet'
-	    console.log('v2', v2)
+	    // let v2 = thevalue.query || 'pouet'
+	    console.log('thevalue', thevalue['query'])
     //JSON.stringify(req)//
     /*let body = null
     if (req.queryStringParameters) {
