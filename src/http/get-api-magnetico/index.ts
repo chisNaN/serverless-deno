@@ -35,7 +35,7 @@ export async function handler (req: APIGatewayProxyEvent, context: Context) {
     //const body = await (await fetch(url + req.queryStringParameters.query)).text()
     return {
     headers,
-    body: JSON.stringify(thevalue)
+    body: JSON.stringify(context)
     }
   } catch (e) {
 	console.log(e)
