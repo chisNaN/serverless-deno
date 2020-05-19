@@ -5,11 +5,11 @@ import { APIGatewayProxyEvent, Context } from "https://deno.land/x/lambda/mod.ts
 /*interface Req {
   queryStringParameters?: { query?: string; };
 }
-*/
+
 interface Req {
   queryStringParameters?: object;
 }
-
+*/
 const headers = {
       //'content-type': 'text/html; charset=utf8',
 	    cors: true,
@@ -23,6 +23,7 @@ export async function handler (req: APIGatewayProxyEvent, context: Context) {
 
   try {
 	    let thevalue = req.queryStringParameters || 'nothing there'
+	    const v2 = thevalue.query || 'pouet'
     //JSON.stringify(req)//
     /*let body = null
     if (req.queryStringParameters) {
@@ -35,7 +36,7 @@ export async function handler (req: APIGatewayProxyEvent, context: Context) {
     //const body = await (await fetch(url + req.queryStringParameters.query)).text()
     return {
     headers,
-    body: JSON.stringify(context)
+    body: JSON.stringify(v2)
     }
   } catch (e) {
 	console.log(e)
