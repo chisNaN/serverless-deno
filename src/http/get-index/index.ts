@@ -1,4 +1,7 @@
 // TODO: modify the body object!
+import "https://deno.land/x/dotenv/load.ts";
+
+console.log(Deno.env);
 let body = `
 <!doctype html>
 <html lang=en>
@@ -17,7 +20,6 @@ let body = `
 
 export async function handler (req: object) {
   try {
-	  console.log('process.env',process.env)
     //JSON.stringify(req)//
     //const body = await (await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).text()
 	  //const body = await r.json()
