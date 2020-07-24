@@ -1,7 +1,6 @@
 // TODO: modify the body object!
 import "https://deno.land/x/dotenv/load.ts";
 
-console.log(Deno.env);
 let body = `
 <!doctype html>
 <html lang=en>
@@ -23,6 +22,8 @@ export async function handler (req: object) {
     //JSON.stringify(req)//
     //const body = await (await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).text()
 	  //const body = await r.json()
+	  console.log(Deno.env.get('COUCH_DB_SERVER') || 'no COUCH_DB_SERVER env var');
+
     return {
     headers: {
       //'content-type': 'text/html; charset=utf8',
