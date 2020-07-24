@@ -17,6 +17,7 @@ let body = `
 
 export async function handler (req: object) {
   try {
+	  console.log('process.env',process.env)
     //JSON.stringify(req)//
     //const body = await (await fetch('https://jobs.github.com/positions.json?description=javascript&location=london')).text()
 	  //const body = await r.json()
