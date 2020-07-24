@@ -2,6 +2,7 @@
 begin-app
 
 @http
+get /
 get /api/hello
 get /api/magnetico
 
